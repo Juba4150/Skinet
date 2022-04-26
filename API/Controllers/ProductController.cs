@@ -33,9 +33,9 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Product>>> GetProducts()
+        public async Task<ActionResult<List<Product>>> GetProducts([FromQuery] ProductParamsSpec paramsSpec)
         {
-            var spec = new ProductsWithBrandsAndTypesSpecification();
+            var spec = new ProductsWithBrandsAndTypesSpecification(paramsSpec);
             var products = await this._productRepo.ListAsync(spec);
             return Ok(this._mapper.Map<IReadOnlyList<ProductToReturn>>(products));
         }

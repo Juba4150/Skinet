@@ -11,12 +11,12 @@ namespace API.Helpers
         public ProductUrlResolver(IConfiguration config)
         {
             this._config = config;
-
         }
         public string Resolve(Product source, ProductToReturn destination, string destMember, ResolutionContext context)
         {
-            if(!string.IsNullOrEmpty(source.PictureUrl)){
-                return _config["ApiUrl"]+source.PictureUrl;
+            if (!string.IsNullOrEmpty(source.PictureUrl))
+            {
+                return _config["ApiUrl"] + source.PictureUrl;
             }
             return null;
         }
