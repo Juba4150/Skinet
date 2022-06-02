@@ -4,17 +4,17 @@
   <a
     href="/"
     class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-    <img src="/assets/images/logo.png" alt="LOGO" style="max-height: 70px" />
+    <img src="/assets/images/logo.png" alt="LOGO" style="max-height: 70px" routerLink="/"/>
   </a>
   <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
     <li>
-      <a class="me-3 py-2 text-dark text-decoration-none" href="#">Home</a>
+      <a class="me-3 py-2"  [routerLink]="['/']"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
     </li>
     <li>
-      <a class="me-3 py-2 text-dark text-decoration-none" href="#">Shop</a>
+      <a class="me-3 py-2" [routerLink]="['/shop']" routerLinkActive="active">Shop</a>
     </li>
     <li>
-      <a class="me-3 py-2 text-dark text-decoration-none" href="#">Contact</a>
+      <a class="me-3 py-2" [routerLink]="['/contact']" routerLinkActive="active"> Contact</a>
     </li>
   </ul>
   <div class="d-flex align-items-center">
