@@ -18,16 +18,16 @@ export class ShopService {
 
   getProducts(shopParam?: ShopParams) {
     let params = new HttpParams();
-    if (shopParam!.brandId !== 0)
-      params = params.append('brandId', shopParam!.brandId.toString());
+    if (shopParam?.brandId !== 0)
+      params = params.append('brandId', shopParam!?.brandId.toString());
     if (shopParam?.typeId !== 0)
-      params = params.append('typeId', shopParam!.typeId.toString());
-    if (shopParam!.search)
-      params = params.append('search', shopParam!.search);
+      params = params.append('typeId', shopParam!?.typeId.toString());
+    if (shopParam?.search)
+      params = params.append('search', shopParam!?.search);
     if (shopParam?.sort)
       params = params.append('sort', shopParam?.sort);
-    params = params.append('pageIndex', shopParam!.pageNumber.toString());
-    params = params.append('pageSize', shopParam!.pageSize.toString());
+    params = params.append('pageIndex', shopParam!?.pageNumber.toString());
+    params = params.append('pageSize', shopParam!?.pageSize.toString());
     return this.httpClient.get<IPagination>(this.baseUrl + 'products', { observe: 'response', params }).pipe(
       delay(1000),
       map(Response => {
